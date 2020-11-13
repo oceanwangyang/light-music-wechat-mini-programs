@@ -8,7 +8,7 @@
   <view class="bg-gray">
   </view>
   <!--第三层：player层-->
-  <view style="display: {{listShow === true ? 'none' : ''}}">
+  <view class="player" style="display: {{listShow === true ? 'none' : ''}}">
     <!--旋转图-->
     <view class="rotate-disk-container">
       <view class="rotate-disk {{pauseStatus === false ? 'rotate-360' : 'rotate-360-paused'}}">
@@ -20,7 +20,7 @@
       <view class="title-left"></view>
       <view class="text">
         <view><text class="name">{{audioList[audioIndex].name}}</text></view>
-        <!--<view><text class="author">-- {{audioList[audioIndex].author}} --</text></view>-->
+        <view><text class="author">{{audioList[audioIndex].author}}</text></view>
       </view>
       <image src="../../assets/img/list.png" class="icon-list" bindtap="bindTapList"></image>
     </view>
@@ -31,7 +31,7 @@
           bindchange="bindSliderchange"
           activeColor="#13beec"
           style="width: 62%;margin: 0;"
-          block-size="12"
+          block-size="20"
           block-color="#13beec"
         />
       <text class="slider-time">{{duration === 0 ? '' : duration}}</text>
@@ -60,12 +60,12 @@
         bindtap="bindTapChoose"
         >
         <view class="name">
-          <text class="list-index">{{index}}</text>
+          <text class="list-index">{{index+1}}</text>
         </view>
         <image class="list-one-poster" src="{{item.poster}}"></image>
         <view class="list-one-right">
           <view class="name">{{item.name}}</view>
-          <!--<view class="author">歌手：{{item.author}}</view>-->
+          <view class="author">歌手：{{item.author}}</view>
         </view>
       </view>
     </view>
